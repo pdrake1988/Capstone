@@ -23,6 +23,10 @@ namespace capstone.Controllers
         {
             return _context.Movies.ToArray();
         }
+        [HttpGet("{id}")]
+        public Movie GetMovie(int id) {
+            return _context.Movies.FirstOrDefault(m => m.Id == id);
+        } 
         [HttpPost]
         public Movie Post([FromBody]Movie movie)
         {       
